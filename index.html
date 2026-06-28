@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Thisanthan M S — Associate Technical Consultant | Data Engineer | Microsoft Fabric | ZipRAG Creator | Salem, Tamil Nadu"/>
+  <meta name="keywords" content="Thisanthan MS, Data Engineer, Data Analyst, Microsoft Fabric, Power BI, Analytics Engineer, ZipRAG, Tamil Nadu"/>
+  <meta property="og:title" content="Thisanthan M S — Data Engineer & Consultant"/>
+  <meta property="og:description" content="Portfolio of Thisanthan M S. Live ZipRAG demo, Microsoft Fabric projects, data engineering expertise."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://thisanthan2903.github.io/TMS_Learning/"/>
+  <title>Thisanthan M S — Data Engineer</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔷</text></svg>"/>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS BAR -->
+<div id="scrollProgress"></div>
+
+<!-- PARTICLE CANVAS -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- ══ NAVBAR ══════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">T<span>.</span>MS</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#demo">ZipRAG</a></li>
+      <li><a href="https://thisanthan2903.github.io/TMS_Learning/" target="_blank" rel="noopener" style="color:var(--accent2)">TMS Learning ↗</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button id="themeBtn" aria-label="Toggle theme">🌙</button>
+      <button id="menuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobMenu" class="mob-menu">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#demo">ZipRAG Demo</a>
+  <a href="https://thisanthan2903.github.io/TMS_Learning/" target="_blank" rel="noopener">TMS Learning ↗</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ══ HERO ════════════════════════════════════ -->
+<section id="hero" class="section" style="padding-top:7rem">
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-badge">Where logic meets strategy to unlock business growth</div>
+
+        <h1 class="hero-name">
+          <span class="ln1">Thisanthan</span>
+          <span class="ln2">M&nbsp;S</span>
+        </h1>
+
+        <p class="hero-tagline">
+          <span id="typed"></span><span style="animation:blink 1s infinite;color:var(--accent)">|</span>
+        </p>
+
+        <p class="hero-desc">
+          Fresh B.E CSE graduate turning raw data into strategic decisions.
+          Building intelligent pipelines, AI-powered analytics &amp; scalable
+          data infrastructure using Microsoft Fabric and modern data stacks.
+        </p>
+
+        <div class="hero-pills">
+          <span class="pill hi">Data Engineer</span>
+          <span class="pill">Data Analyst</span>
+          <span class="pill">Analytics Engineer</span>
+          <span class="pill">Data Scientist</span>
+          <span class="pill">Microsoft Fabric</span>
+          <span class="pill">Finance Analytics</span>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#demo" class="btn btn-p">▶ Try ZipRAG Live</a>
+          <a href="#projects" class="btn btn-s">View Projects</a>
+          <a href="https://thisanthan2903.github.io/TMS_Learning/" target="_blank" rel="noopener" class="btn btn-s">🌐 TMS Learning</a>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-right">
+
+        <!-- Profile photo with spinning ring -->
+        <div class="profile-ring">
+          <div class="profile-photo">
+            <!--
+              ════════════════════════════════════════
+              PHOTO PLACEHOLDER — REPLACE WITH YOUR PHOTO
+              ════════════════════════════════════════
+              After uploading your photo to GitHub as:
+                assets/profile.jpg
+              Replace the div below with:
+                <img src="assets/profile.jpg" alt="Thisanthan M S"/>
+
+              For now, initials avatar shows as placeholder.
+              ════════════════════════════════════════
+            -->
+            <div class="photo-placeholder">T</div>
+           
+            <img src="profile.jpg" alt="Thisanthan M S — Data Engineer"/>
+            
+          </div>
+
+          <!-- Floating chips -->
+          <div class="float-chip fc1">🔷 Microsoft Fabric</div>
+          <div class="float-chip fc2">⭐ ZipRAG Creator</div>
+          <div class="float-chip fc3">📊 Data Pro</div>
+        </div>
+
+        <!-- Slideshow card -->
+        <div class="slideshow-wrap">
+          <div class="slide-track" id="slideTrack"></div>
+          <div class="slide-nav">
+            <div class="slide-dots" id="slideDots"></div>
+            <div class="slide-arrows">
+              <button class="sarr" id="slidePrev">←</button>
+              <button class="sarr" id="slideNext">→</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ════════════════════════════════════ -->
+<div class="stats-band">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-item reveal">
+        <div class="stat-n" data-count="4">0</div>
+        <div class="stat-l">Projects Built</div>
+      </div>
+      <div class="stat-item reveal rd1">
+        <div class="stat-n" data-count="6" data-suffix="+">0</div>
+        <div class="stat-l">Tech Domains</div>
+      </div>
+      <div class="stat-item reveal rd2">
+        <div class="stat-n">B.E</div>
+        <div class="stat-l">CSE Graduate</div>
+      </div>
+      <div class="stat-item reveal rd3">
+        <div class="stat-n">∞</div>
+        <div class="stat-l">Curiosity Index</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ABOUT ════════════════════════════════════ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-photo-wrap reveal from-left">
+        <div class="about-photo">
+          <!--
+            PHOTO PLACEHOLDER — Replace with:
+            <img src="assets/profile.jpg" alt="Thisanthan M S"/>
+          -->
+          <div class="ap-placeholder">👨‍💻</div>
+          <!-- UNCOMMENT:
+          <img src="assets/profile.jpg" alt="Thisanthan M S"/>
+          -->
+        </div>
+        <div class="about-badge">
+          <div class="ab-icon">🔷</div>
+          <div>
+            <div class="ab-name">Thisanthan M S</div>
+            <div class="ab-sub">Associate Technical Consultant</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="eyebrow reveal">About Me</div>
+        <h2 class="about-heading reveal">
+          Turning data chaos<br>into clear decisions.
+        </h2>
+        <p class="about-p reveal">
+          I'm Thisanthan M S — a fresh B.E Computer Science graduate and Associate Technical Consultant
+          with a deep passion for all things data. From engineering robust pipelines to crafting insightful
+          dashboards, I thrive at the intersection of infrastructure and intelligence.
+        </p>
+        <p class="about-p reveal">
+          Currently deep in the Microsoft Fabric ecosystem — building lakehouse architectures, orchestrating
+          data flows, and delivering real-time analytics through Power BI. My background spans data engineering,
+          analytics, data science, warehousing, and finance analytics.
+        </p>
+        <p class="about-p reveal">
+          My flagship project <strong style="color:var(--accent)">ZipRAG</strong> is a live demonstration of
+          multi-format document AI — upload any file, get an instant summary, and ask questions grounded
+          entirely in your document. Also check out
+          <a href="https://thisanthan2903.github.io/TMS_Learning/" target="_blank" rel="noopener"
+             style="color:var(--accent2);font-weight:600">TMS Learning ↗</a> — my learning platform.
+        </p>
+
+        <div class="timeline reveal">
+          <div class="tl-item">
+            <div class="tl-dot cur"></div>
+            <div>
+              <div class="tl-date">2026 — Present</div>
+              <div class="tl-role">Associate Technical Consultant</div>
+              <div class="tl-place">Data Engineering · Analytics · Finance · Microsoft Fabric</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div>
+              <div class="tl-date">2022 — 2026</div>
+              <div class="tl-role">B.E — Computer Science Engineering</div>
+              <div class="tl-place">4 Capstone Projects · Data &amp; AI Focus</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-ctas reveal">
+          <a href="#contact" class="btn btn-p">Get in Touch</a>
+          <a href="https://thisanthan2903.github.io/TMS_Learning/" target="_blank" rel="noopener" class="btn btn-s">🌐 TMS Learning</a>
+          <a href="#demo" class="btn btn-s">Try ZipRAG →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKILLS ═══════════════════════════════════ -->
+<section class="section skills-bg" id="skills">
+  <div class="container">
+    <div class="eyebrow reveal">Technical Expertise</div>
+    <h2 class="sec-title reveal">Tools &amp; Technologies</h2>
+    <div class="skills-grid">
+
+      <div class="sk-card feat reveal">
+        <div class="sk-icon">🔷</div>
+        <div class="sk-name">Microsoft Fabric (Current Focus)</div>
+        <div class="sk-desc">End-to-end unified analytics — lakehouse on OneLake, Data Factory pipelines, KQL databases, Spark notebooks, and real-time Power BI dashboards.</div>
+        <div class="sk-tags">
+          <span class="sk-tag">OneLake</span><span class="sk-tag">Lakehouse</span>
+          <span class="sk-tag">Data Factory</span><span class="sk-tag">KQL</span>
+          <span class="sk-tag">Spark</span><span class="sk-tag">Power BI</span>
+          <span class="sk-tag">DAX</span><span class="sk-tag">Real-Time Analytics</span>
+        </div>
+      </div>
+
+      <div class="sk-card reveal rd1">
+        <div class="sk-icon">🏗️</div>
+        <div class="sk-name">Data Engineering</div>
+        <div class="sk-desc">Robust ETL/ELT pipelines, data orchestration, and scalable infrastructure engineering.</div>
+        <div class="sk-tags"><span class="sk-tag">Python</span><span class="sk-tag">SQL</span><span class="sk-tag">Apache Spark</span><span class="sk-tag">Airflow</span><span class="sk-tag">dbt</span></div>
+      </div>
+
+      <div class="sk-card reveal">
+        <div class="sk-icon">📊</div>
+        <div class="sk-name">Data Analytics</div>
+        <div class="sk-desc">Statistical analysis and visual storytelling that converts data into actionable insights.</div>
+        <div class="sk-tags"><span class="sk-tag">Pandas</span><span class="sk-tag">NumPy</span><span class="sk-tag">Tableau</span><span class="sk-tag">Excel</span><span class="sk-tag">Matplotlib</span></div>
+      </div>
+
+      <div class="sk-card reveal rd1">
+        <div class="sk-icon">🤖</div>
+        <div class="sk-name">AI / ML &amp; LLMs</div>
+        <div class="sk-desc">Building RAG pipelines, intelligent document analyzers, and AI-powered applications.</div>
+        <div class="sk-tags"><span class="sk-tag">LangChain</span><span class="sk-tag">Claude API</span><span class="sk-tag">RAG</span><span class="sk-tag">FAISS</span><span class="sk-tag">Embeddings</span></div>
+      </div>
+
+      <div class="sk-card reveal rd2">
+        <div class="sk-icon">🗄️</div>
+        <div class="sk-name">Data Warehousing</div>
+        <div class="sk-desc">Star/snowflake schemas, dimensional modelling, OLAP cubes, and analytical data models.</div>
+        <div class="sk-tags"><span class="sk-tag">Snowflake</span><span class="sk-tag">Azure Synapse</span><span class="sk-tag">Star Schema</span><span class="sk-tag">dbt</span></div>
+      </div>
+
+      <div class="sk-card reveal rd3">
+        <div class="sk-icon">💰</div>
+        <div class="sk-name">Finance Analytics</div>
+        <div class="sk-desc">Financial modelling, P&amp;L analysis, automated reconciliation, and enterprise KPI reporting.</div>
+        <div class="sk-tags"><span class="sk-tag">P&amp;L Analysis</span><span class="sk-tag">Finance KPIs</span><span class="sk-tag">DAX</span><span class="sk-tag">Excel Models</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECTS ══════════════════════════════════ -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="eyebrow reveal">Work</div>
+    <h2 class="sec-title reveal">Projects</h2>
+    <div class="proj-grid">
+
+      <!-- ZipRAG -->
+      <div class="proj-card feat reveal">
+        <div class="proj-vis">📦</div>
+        <div class="proj-body">
+          <div class="proj-badges">
+            <span class="pb pb-feat">⭐ Featured</span>
+            <span class="pb pb-live"><span class="pb-dot"></span>Live Demo</span>
+          </div>
+          <h3 class="proj-title">ZipRAG — Multi-Format Analyzer</h3>
+          <p class="proj-desc">
+            An AI-powered document intelligence system that ingests files of any format — CSV, Excel, PDF,
+            JSON, TXT, DOCX and more — extracts and understands the content within them, then generates
+            intelligent summaries and enables contextual Q&amp;A strictly grounded in the uploaded document.
+            Zero hallucinations. Every answer is sourced from your file.
+          </p>
+          <div class="proj-tech">
+            <span class="ptag">Python</span><span class="ptag">Claude API</span>
+            <span class="ptag">RAG Architecture</span><span class="ptag">Multi-format Parser</span>
+            <span class="ptag">LangChain</span><span class="ptag">FAISS</span><span class="ptag">Streamlit</span>
+          </div>
+          <div class="proj-links">
+            <a href="#demo" class="proj-link">Try it live on this page →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TMS Learning -->
+      <div class="proj-card reveal">
+        <div class="proj-vis">🌐</div>
+        <div class="proj-body">
+          <div class="proj-badges">
+            <span class="pb pb-live"><span class="pb-dot"></span>Live Site</span>
+            <span class="pb pb-url">↗ Online</span>
+          </div>
+          <h3 class="proj-title">TMS Learning Platform</h3>
+          <p class="proj-desc">
+            A live learning platform built and deployed on GitHub Pages.
+            Covers data engineering concepts, tools, and resources — reflecting my journey
+            as a data professional and consultant.
+          </p>
+          <div class="proj-tech">
+            <span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">JavaScript</span>
+            <span class="ptag">GitHub Pages</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://thisanthan2903.github.io/TMS_Learning/" target="_blank" rel="noopener" class="proj-link secondary">Visit TMS Learning ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Finance Pipeline -->
+      <div class="proj-card reveal">
+        <div class="proj-vis">💹</div>
+        <div class="proj-body">
+          <div class="proj-badges"><span class="pb pb-edu">Academic</span></div>
+          <h3 class="proj-title">Finance Data Pipeline</h3>
+          <p class="proj-desc">
+            End-to-end data pipeline for financial data ingestion, transformation, and reporting built on
+            Microsoft Fabric. Automated reconciliation with live Power BI dashboards for real-time KPI monitoring.
+          </p>
+          <div class="proj-tech">
+            <span class="ptag">Microsoft Fabric</span><span class="ptag">Power BI</span>
+            <span class="ptag">DAX</span><span class="ptag">Azure Data Factory</span><span class="ptag">Python</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analytics Dashboard -->
+      <div class="proj-card reveal">
+        <div class="proj-vis">📈</div>
+        <div class="proj-body">
+          <div class="proj-badges"><span class="pb pb-edu">Academic</span></div>
+          <h3 class="proj-title">Analytics Dashboard Engine</h3>
+          <p class="proj-desc">
+            Interactive BI dashboard with dynamic filtering, drill-through capabilities, and automated
+            report generation. Connects live data sources to multi-layered visual analytics.
+          </p>
+          <div class="proj-tech">
+            <span class="ptag">Python</span><span class="ptag">SQL</span>
+            <span class="ptag">Plotly</span><span class="ptag">Pandas</span><span class="ptag">FastAPI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Warehouse -->
+      <div class="proj-card reveal">
+        <div class="proj-vis">🗄️</div>
+        <div class="proj-body">
+          <div class="proj-badges"><span class="pb pb-edu">Academic</span></div>
+          <h3 class="proj-title">Data Warehouse Modelling</h3>
+          <p class="proj-desc">
+            Full dimensional data warehouse from scratch — star schema design, ETL pipelines,
+            OLAP cubes, and a business reporting layer for a retail domain on Snowflake + dbt.
+          </p>
+          <div class="proj-tech">
+            <span class="ptag">dbt</span><span class="ptag">Snowflake</span>
+            <span class="ptag">Star Schema</span><span class="ptag">SQL</span><span class="ptag">Dimensional Modelling</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ ZIPRAG DEMO ═══════════════════════════════ -->
+<section class="section demo-bg" id="demo">
+  <div class="container">
+    <div class="eyebrow reveal">Live Demo</div>
+    <h2 class="sec-title reveal">ZipRAG — Try It Now</h2>
+    <p style="color:var(--muted);font-size:.95rem;max-width:580px;margin-bottom:2.5rem;line-height:1.75" class="reveal">
+      Upload any file and ZipRAG instantly analyzes it, generates a smart summary, then answers
+      your questions — grounded only in your document. Sessions are saved locally in your browser.
+    </p>
+
+    <div class="demo-shell reveal">
+      <div class="demo-bar">
+        <div class="db-dot" style="background:#ff5f57"></div>
+        <div class="db-dot" style="background:#febc2e"></div>
+        <div class="db-dot" style="background:#28c840"></div>
+        <span class="demo-bar-title">ziprag — multiformat analyzer · by thisanthan m s</span>
+        <div class="demo-status">
+          <span class="s-dot" id="sDot"></span>
+          <span id="sTxt">ready</span>
+        </div>
+      </div>
+
+      <div class="demo-body">
+
+        <div class="up-zone" id="upZone">
+          <input type="file" id="fileInp"
+            accept=".txt,.csv,.json,.pdf,.xlsx,.xls,.docx,.md,.xml,.tsv,.html,.log,.yaml,.yml"/>
+          <div class="up-icon">📂</div>
+          <div class="up-ttl">Drop your file here</div>
+          <div class="up-sub">or click to browse any format</div>
+          <div class="fmts">
+            <span class="fmt">.csv</span><span class="fmt">.xlsx</span>
+            <span class="fmt">.pdf</span><span class="fmt">.txt</span>
+            <span class="fmt">.json</span><span class="fmt">.docx</span>
+            <span class="fmt">.md</span><span class="fmt">.xml</span>
+            <span class="fmt">.yaml</span><span class="fmt">+more</span>
+          </div>
+        </div>
+
+        <div class="file-bar" id="fileBar">
+          <div class="fb-ico" id="fbIco">📄</div>
+          <div>
+            <div class="fb-name" id="fbName">filename.csv</div>
+            <div class="fb-size" id="fbSize">0 KB</div>
+          </div>
+          <button class="fb-clear" id="fbClr" title="Remove">✕</button>
+        </div>
+
+        <div class="sum-box" id="sumBox">
+          <div class="sum-lbl">⚡ Document Intelligence Summary</div>
+          <div class="sum-txt" id="sumTxt"></div>
+        </div>
+
+        <div class="qa-panel" id="qaPanel">
+          <div class="qa-lbl">💬 Ask anything about this document</div>
+          <div class="qa-msgs" id="qaMsgs"></div>
+          <div class="qa-row">
+            <input class="qa-in" type="text" id="qaIn"
+              placeholder="e.g. What are the key insights? What columns exist?"/>
+            <button class="qa-btn" id="qaBtn">Ask →</button>
+          </div>
+        </div>
+
+        <div class="hist-sec" id="histSec">
+          <div class="hist-ttl">📚 Recent Sessions (saved locally)</div>
+          <div class="hist-list" id="histList"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══════════════════════════════════ -->
+<section class="section contact-bg" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="eyebrow reveal" style="justify-content:center">Get In Touch</div>
+      <h2 class="sec-title reveal" style="font-size:2.2rem">
+        Let's build something<br>remarkable together.
+      </h2>
+      <p class="contact-sub reveal">
+        Open to data engineering roles, analytics consulting, Microsoft Fabric projects,
+        and AI collaborations. Based in Salem, Tamil Nadu, India — available remotely worldwide.
+      </p>
+
+      <div class="contact-cards reveal">
+        <a href="mailto:thisanthan2903@gmail.com" class="c-card">
+          <span class="c-ico">✉️</span>thisanthan2903@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/thisanthan-ms" class="c-card" target="_blank" rel="noopener">
+          <span class="c-ico">🔗</span>LinkedIn
+        </a>
+        <a href="https://github.com/thisanthan2903" class="c-card" target="_blank" rel="noopener">
+          <span class="c-ico">⌥</span>GitHub
+        </a>
+        <a href="https://thisanthan2903.github.io/TMS_Learning/" class="c-card" target="_blank" rel="noopener">
+          <span class="c-ico">🌐</span>TMS Learning
+        </a>
+      </div>
+
+      <div class="avail reveal">
+        <span class="avail-dot"></span>
+        Treating data like a chessboard: building the strategy to stay three moves ahead
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-in">
+      <div class="foot-logo">T<span>.</span>MS</div>
+      <div class="foot-copy">© 2025 Thisanthan M S — All rights reserved</div>
+      <div class="foot-loc">📍 Salem, Tamil Nadu, India 🇮🇳</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
